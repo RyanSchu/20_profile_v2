@@ -4,9 +4,9 @@ import Resume from './pages/Resume'
 import Portfolio from './pages/Portfolio'
 import Contact from './pages/Contact'
 import Header from './Header'
+import Footer from './Footer'
 
 export default function Container() {
-    const text = "Text"
     const [currentPage, setCurrentPage] = useState('Home');
 
     const renderPage = () => {
@@ -25,10 +25,12 @@ export default function Container() {
     const handlePageChange = (page) => setCurrentPage(page)
 
     return (
-        <div>
+        <body>
             <Header currentPage={currentPage} handlePageChange={handlePageChange} />
-            {text}
-            {renderPage()}
-        </div>
+              <main>
+                {renderPage()}
+              </main>
+            <Footer />
+        </body>
     )
 }
